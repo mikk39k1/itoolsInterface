@@ -15,7 +15,7 @@
         <img src="/images/ombudsmanden.png" alt="Ombudsmanden">
     </nav>
     <button th:if="${session.user == null}"><a href="/login">Login</a></button>
-    <button th:if="${session.user != null}"><a href="/login">Logout</a></button>
+    <button th:if="${session.user != null}"><a href="/logout">Logout</a></button>
 </header>
 
 <div class="page-wrapper">
@@ -40,6 +40,7 @@
             <div class="printer-toner">
             </div>
         </a>
+
     </div>
 </div>
 </body>

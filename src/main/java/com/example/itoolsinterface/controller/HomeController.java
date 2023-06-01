@@ -36,6 +36,12 @@ public class HomeController {
         return "home/invalidLogin";
     }
 
+    @GetMapping("/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/";
+    }
+
     @PostMapping("/signin")
     public String signin(@RequestParam("username") String username, @RequestParam("password") String password,
                          HttpSession session){
