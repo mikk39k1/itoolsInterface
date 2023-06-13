@@ -9,5 +9,5 @@ cd /home/fomadmin/itoolsInterface
 # Run Maven build
 mvn clean install
 
-# Move the generated JAR file to the jar directory
+# Move the generated JAR file to the jar directory a
 mv /home/fomadmin/itoolsInterface/target/app.jar /home/fomadmin/itoolsInterface/jar/
