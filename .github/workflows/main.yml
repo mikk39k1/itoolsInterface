@@ -18,7 +18,7 @@ jobs:
         run: chmod +x build.sh
 
       - name: Build and Deploy
-        working-directory: target
+        working-directory: /home/runner/work/itoolsInterface/itoolsInterface
         run: bash build.sh
 
       - name: Transfer JAR file to server
