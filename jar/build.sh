@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the project directory on the server
-PROJECT_DIR="/home/fomadmin/itoolsInterface"
+PROJECT_DIR="/home/fomadmin/itoolsInterface/jar"
 
 # Go to the project directory
 cd "$PROJECT_DIR"
