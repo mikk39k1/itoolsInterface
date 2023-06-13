@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Print the current directory for debugging
+pwd
+
 # Go to the project directory
 cd /home/fomadmin/itoolsInterface
 
