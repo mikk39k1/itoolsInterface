@@ -1,11 +1,8 @@
 #!/bin/bash
 
-# Set the project directory on the server
-PROJECT_DIR="/home/fomadmin/itoolsInterface/jar"
-
 # Go to the project directory
-cd "$PROJECT_DIR"
+cd /home/fomadmin/itoolsInterface
 
-# Run the build command (example: using Maven)
-mvn clean package
+# Run the build command using the specified pom.xml file
+mvn -f /home/fomadmin/itoolsInterface/pom.xml clean package
 
