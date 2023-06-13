@@ -12,6 +12,10 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      
+    - name: Set executable permissions for build.sh
+      working-directory: jar
+      run: chmod +x build.sh
 
     - name: Build JAR file
       run: |
