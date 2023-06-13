@@ -10,25 +10,38 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    
+    - name: Set up Java and Maven
+      uses: actions/setup-java@v2
+      with:
+          java-version: '11'
+          maven: '3.8.4'
+          distribution: 'adopt'
+        
+    - name: Build with Maven
+      run: |
+        cd itoolsInterface
+        mvn clean install
+      
+    - name: Set executable permissions for build.sh
+      working-directory: jar
+      run: chmod +x build.sh
 
-      - name: Set executable permissions for build.sh
-        working-directory: jar
-        run: chmod +x build.sh
+    - name: Build JAR file
+      run: |
+        cd jar
+        ./build.sh
 
-      - name: Build and Deploy
-        working-directory: jar
-        run: bash build.sh
+    - name: Transfer JAR file to server
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        source: "target/app.jar"
+        target: "/home/fomadmin/itoolsInterface/target/app.jar"
 
-      - name: Transfer JAR file to server
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "jar/app.jar"
-          target: "/home/fomadmin/itoolsInterface/jar/app.jar"
-
-      - name: Restart services
-        run: sudo systemctl restart itoolsinterface.service
+    - name: Restart service
+      run: sudo systemctl restart itoolsinterface.service
