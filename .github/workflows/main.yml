@@ -19,8 +19,7 @@ jobs:
 
       - name: Build and Deploy
         working-directory: jar
-        run: ./build.sh
-
+        run: bash build.sh
 
       - name: Transfer JAR file to server
         uses: appleboy/scp-action@master
