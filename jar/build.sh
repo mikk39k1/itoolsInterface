@@ -1,10 +1,11 @@
 #!/bin/bash
 
-# Print the current directory for debugging
-pwd
+# Set the project directory on the server
+PROJECT_DIR="/home/fomadmin/itoolsInterface"
 
 # Go to the project directory
-cd /home/fomadmin/itoolsInterface/jar
+cd "$PROJECT_DIR"
 
 # Run the build command (example: using Maven)
 mvn clean package
+
