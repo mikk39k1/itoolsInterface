@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iTools Interface</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <link rel="icon" href="/images/itools.png" type="image/x-icon">
+    <link href="/css/indexStyle.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+    <nav>
+        <img src="/images/ombudsmanden.png" alt="Ombudsmanden">
+    </nav>
+    <button th:if="${session.user == null}"><a href="/login">Login</a></button>
+    <button th:if="${session.user != null}"><a href="/logout">Logout</a></button>
+</header>
+
+<div class="page-wrapper">
+    <div class="itools-interface">
+        <!-- Insert new interface windows here -->
+        <a href="http://itools:9090" target="_blank">
+            PDF Checker
+            <div class="pdf-checker">
+            </div>
+        </a>
+
+        <!-- Insert new interface windows here -->
+        <a href="http://192.168.40.29/zabbix/tunnellist.html" target="_blank">
+            Tunnelmail
+            <div class="tunnelmail">
+            </div>
+        </a>
+
+        <!-- Insert new interface windows here -->
+        <a href="http://192.168.40.29/zabbix/zabbix.php?action=dashboard.view&dashboardid=21" target="_blank">
+            Printer Tonere
+            <div class="printer-toner">
+            </div>
+        </a>
+
+        <a th:if="${session.user != null}" href="http://192.168.40.29/zabbix/zabbix.php?action=dashboard.view&dashboardid=21" target="_blank">
+            Printer Tonere
+            <div class="printer-toner">
+            </div>
+        </a>
+
+    </div>
+</div>
+</body>
+</html>

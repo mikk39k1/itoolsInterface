@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Karla', sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 100px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+nav img {
+    height: 140px;
+}
+
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.itools-interface {
+    margin: 4% 0;
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    height: 60%;
+}
+
+.pdf-checker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/Pdfchecker.png");
+    height: 150px;
+    width: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #e0e0e0;
+    box-shadow: 9px 9px 9px 3px rgba(215, 215, 215, 0.76);
+    border-radius: 10px;
+}
+
+.tunnelmail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/tunnelmail.png");
+    height: 150px;
+    width: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #e0e0e0;
+    box-shadow: 9px 9px 9px 3px rgba(215, 215, 215, 0.76);
+    border-radius: 10px;
+}
+
+.printer-toner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/printertoner.png");
+    height: 150px;
+    width: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #e0e0e0;
+    box-shadow: 9px 9px 9px 3px rgba(215, 215, 215, 0.76);
+    border-radius: 10px;
+}
+
+
+
+a {
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    font-size: 24px;
+}
+
+a:visited {
+    color: black;
+}
+
