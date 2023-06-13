@@ -1,7 +1,10 @@
 #!/bin/bash
 
+chmod +x jar/build.sh
+
+
 # Go to the project directory
-cd /path/to/project
+cd /home/fomadmin/itoolsInterface
 
 # Run the build command (example: using Maven)
 mvn clean package
