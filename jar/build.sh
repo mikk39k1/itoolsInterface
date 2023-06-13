@@ -3,9 +3,11 @@
 # Grant read permissions to pom.xml file
 chmod +r /home/fomadmin/itoolsInterface/pom.xml
 
-# Go to the project directory
+# Change directory to project directory
 cd /home/fomadmin/itoolsInterface
 
-# Run the build command using the specified pom.xml file
-mvn -f /home/fomadmin/itoolsInterface/pom.xml clean package
+# Run Maven build
+mvn clean install
 
+# Move the generated JAR file to the jar directory
+mv /home/fomadmin/itoolsInterface/target/app.jar /home/fomadmin/itoolsInterface/jar/
