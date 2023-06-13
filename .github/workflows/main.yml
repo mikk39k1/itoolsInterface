@@ -12,17 +12,17 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      
-    - name: Build with Maven
-      run: |
-            cd /home/fomadmin/itoolsInterface
-            mvn clean install
-            
+    
     - name: Set up Java and Maven
       uses: actions/setup-java@v2
       with:
         java-version: '20'
         maven-version: '3.4'  # Replace '3.x' with the desired Maven version
+        
+    - name: Build with Maven
+      run: |
+            cd /home/fomadmin/itoolsInterface
+            mvn clean install
       
     - name: Set executable permissions for build.sh
       working-directory: jar
