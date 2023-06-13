@@ -18,7 +18,7 @@ jobs:
         run: chmod +x build.sh
 
       - name: Build and Deploy
-        working-directory: /home/fomadmin/itoolsInterface/
+        working-directory: /home/fomadmin/itoolsInterface/jar
         run: bash build.sh
 
       - name: Transfer JAR file to server
