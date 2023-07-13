@@ -14,8 +14,8 @@
     <nav>
         <img src="/images/ombudsmanden.png" alt="Ombudsmanden">
     </nav>
-    <button th:if="${session.user == null}"><a href="/login">Login</a></button>
-    <button th:if="${session.user != null}"><a href="/logout">Logout</a></button>
+    <button th:if="${session.user == null}"><a href="/signin">Login</a></button>
+    <button th:if="${session.user != null}"><a href="/logOut">Logout</a></button>
 </header>
 
 <div class="page-wrapper">

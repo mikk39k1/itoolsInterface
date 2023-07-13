@@ -1,7 +1,4 @@
-com\example\itoolsinterface\service\HomeService.class
 com\example\itoolsinterface\controller\HomeController.class
 com\example\itoolsinterface\config\appConfig.class
-com\example\itoolsinterface\model\User.class
 com\example\itoolsinterface\ItoolsInterfaceApplication.class
 com\example\itoolsinterface\interceptors\SessionInterceptor.class
-com\example\itoolsinterface\repository\HomeRepository.class
