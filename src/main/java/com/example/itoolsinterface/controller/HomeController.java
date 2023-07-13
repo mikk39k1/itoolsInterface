@@ -26,7 +26,8 @@ public class HomeController {
 
     @GetMapping("/")
     public String index(HttpSession session, Model model){
-        model.addAttribute("cards", cardService.getAllCards());
+        //model.addAttribute("cards", cardService.getAllCards());
+        // Husk at tilføj cards i html
         return "home/index";
     }
 
