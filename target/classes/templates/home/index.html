@@ -19,9 +19,11 @@
 </header>
 
 <div class="page-wrapper">
-    <div class="itools-interface">
+    <div th:each="card: ${cards}" class="itools-interface">
+
+
         <!-- Insert new interface windows here -->
-        <a href="http://itools:9090" target="_blank">
+        <a href="http://itools:9090/" target="_blank">
             PDF Checker
             <div class="pdf-checker">
             </div>
@@ -40,14 +42,42 @@
             <div class="printer-toner">
             </div>
         </a>
-
-        <a th:if="${session.user != null}" href="http://192.168.40.29/zabbix/zabbix.php?action=dashboard.view&dashboardid=21" target="_blank">
-            Printer Tonere
-            <div class="printer-toner">
-            </div>
-        </a>
-
     </div>
+    <div class="temporary-access-wrapper">
+        <h2>Anmod om adgang til en midlertidig mailgruppe.</h2>
+        <div class="temporary-access-container">
+            <form action="/getTemporaryAccess" method="post" target="_blank">
+
+                <label for="initials">Initialer:</label>
+                <input type="text" name="initials" id="initials" required>
+
+                <label for="hourAmount">Timer:</label>
+                <select id="hourAmount" name="hourAmount">
+                    <option value="24" name="hour24">24</option>
+                    <option value="48" name="hour48">48</option>
+                    <option value="72" name="hour72">72</option>
+                </select>
+
+                <label for="mailGroup">Ønsket adgang til mailgruppe:</label>
+                <select id="mailGroup" name="mailGroup">
+                    <option value="Omstilling">Omstilling</option>
+                </select>
+
+                <div id="temporary-access-btn" class="btn-wrapper">
+                    <button class="temporary-access-btn" type="submit">Få midlertidig adgang</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div th:if="${session.user != null}">
+        <form action="/cardCreation" method="get">
+            <button type="submit">Tilføj nyt card</button>
+        </form>
+    </div>
+
 </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/correctInitialsMessage.js"></script>
 </html>
