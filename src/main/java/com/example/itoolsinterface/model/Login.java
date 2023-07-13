@@ -1,7 +1,6 @@
 package com.example.itoolsinterface.model;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,12 +14,10 @@ public class Login {
 
     @NotBlank (message = "Username cannot be blank")
     @Size(min = 3, max = 20)
-    @Pattern(regexp = "^[a-zA-ZøæåØÆÅ./!@]+$", message = "Invalid characters - a-zA-ZøæåØÆÅ./!@")
-    private String username;
+    private String loginUsername;
     @NotBlank (message = "Password cannot be blank")
     @Size(min = 6, max = 20)
-    @Pattern(regexp = "^[a-zA-ZøæåØÆÅ0-9./!@]+$", message = "Invalid characters - a-zA-ZøæåØÆÅ./!@")
-    private String password;
+    private String loginPassword;
 
 
     public enum LoginResult  {

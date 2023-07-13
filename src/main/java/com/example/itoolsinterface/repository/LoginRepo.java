@@ -15,7 +15,7 @@ public class LoginRepo {
     JdbcTemplate jdbcTemplate;
 
     public Login.LoginResult loginUser(String username, String password) {
-        String sql = "SELECT * FROM login_credentials WHERE username = ? AND password = ?";
+        String sql = "SELECT * FROM login_credentials WHERE login_username = ? AND login_password = ?";
         try {
             jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Login.class), username, password);
             return Login.LoginResult.SUCCESS;
@@ -29,14 +29,14 @@ public class LoginRepo {
 
     public Login getLoginSession(String username, String password) {
         String sql = "SELECT * FROM login_credentials " +
-                " WHERE username = ? AND password = ?";
+                " WHERE login_username = ? AND login_password = ?";
         return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Login.class), username, password);
     }
 
     public String getUserByUsername(String username) {
-        String sql = "SELECT * FROM login_credential WHERE username = ?";
+        String sql = "SELECT * FROM login_credentials WHERE login_username = ?";
         try {
-            return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Login.class), username).getUsername();
+            return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Login.class), username).getLoginUsername();
         } catch (EmptyResultDataAccessException e) {
             return null;
         }

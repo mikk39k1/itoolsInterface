@@ -27,18 +27,18 @@ public class LoginController {
 
     @PostMapping("/login")
     public String login(@ModelAttribute("loginRequest") @Valid Login login, BindingResult result, HttpSession session) {
-        Login.LoginResult loginRequest = loginService.loginUser(login.getUsername(), login.getPassword());
+        Login.LoginResult loginRequest = loginService.loginUser(login.getLoginUsername(), login.getLoginPassword());
 
         if (loginRequest == Login.LoginResult.SUCCESS) {
-            Login user = loginService.getLoginSession(login.getUsername(), login.getPassword());
+            Login user = loginService.getLoginSession(login.getLoginUsername(), login.getLoginPassword());
             session.setAttribute("user", user);
             return "redirect:/";
 
         } else {
             if (loginRequest == Login.LoginResult.INCORRECT_USERNAME) {
-                result.rejectValue("username", "error.login", "miss match username or password");
+                result.rejectValue("loginUsername", "error.login", "miss match username or password");
             } else {
-                result.rejectValue("password", "error.login", "miss match username or password");
+                result.rejectValue("loginPassword", "error.login", "miss match username or password");
             }
             return "authorization/login";
         }
