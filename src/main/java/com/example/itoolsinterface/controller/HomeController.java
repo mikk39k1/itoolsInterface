@@ -1,5 +1,6 @@
 package com.example.itoolsinterface.controller;
 
+import com.example.itoolsinterface.model.Login;
 import com.example.itoolsinterface.service.CardService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class HomeController {
     CardService cardService;
 
     @GetMapping("/")
-    public String index(HttpSession session, Model model){
+    public String index(){
         //model.addAttribute("cards", cardService.getAllCards());
         // Husk at tilføj cards i html
         return "home/index";
