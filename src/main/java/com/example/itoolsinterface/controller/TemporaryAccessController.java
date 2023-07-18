@@ -18,7 +18,7 @@ public class TemporaryAccessController {
     public void clearDataFromListAtMidnight() {
         LocalDateTime now = LocalDateTime.now();
         temporaryAccessDataList.removeIf(data ->
-                data.getLocalDateTime().toLocalDate().isAfter(now.toLocalDate()));
+                data.getLocalDateTime().toLocalDate().isBefore(now.toLocalDate()));
     }
 
 
