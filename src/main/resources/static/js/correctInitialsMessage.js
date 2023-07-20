@@ -7,6 +7,19 @@ temporaryAccessBtn.addEventListener('click', (e) => {
     const initialsInput = form.querySelector('#initials');
     const initials = initialsInput.value;
 
+    const initialsPattern = /^[A-Za-z]{2,3}$/;
+
+    if (!initialsPattern.test(initials)) {
+        Swal.fire({
+            title: 'Fejl',
+            text: 'Initialer skal indeholde enten 2 eller 3 karakterer',
+            icon: 'error',
+            confirmButtonColor: 'rgba(132,178,139,0.89)',
+            confirmButtonText: 'OK',
+        });
+        return;
+    }
+
     Swal.fire({
         title: 'Er dette dine initialer?',
         text: initials,

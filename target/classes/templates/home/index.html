@@ -46,10 +46,11 @@
     <div class="temporary-access-wrapper">
         <h2>Anmod om midlertidig adgang til en mailgruppe.</h2>
         <div class="temporary-access-container">
-            <form action="/getTemporaryAccess" method="post" target="_blank">
+            <form id="accessForm" action="/getTemporaryAccess" method="post" target="_blank">
 
                 <label for="initials">Initialer:</label>
-                <input type="text" name="initials" id="initials" required>
+                <input pattern="[A-Za-z]{2,3}" title="Initialer skal indeholde enten 2 eller 3 karakterer"
+                        type="text" name="initials" id="initials" required>
 
                 <label for="hourAmount">Timer:</label>
                 <select id="hourAmount" name="hourAmount">

@@ -25,6 +25,7 @@ public class LoginController {
         return "authorization/login";
     }
 
+    /*
     @PostMapping("/login")
     public String login(@ModelAttribute("loginRequest") @Valid Login login, BindingResult result, HttpSession session) {
         Login.LoginResult loginRequest = loginService.loginUser(login.getLoginUsername(), login.getLoginPassword());
@@ -56,5 +57,5 @@ public class LoginController {
         return "authorization/accessDenied";
     }
 
-
+*/
 }

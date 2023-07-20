@@ -1,6 +1,8 @@
 package com.example.itoolsinterface.controller;
 
 import com.example.itoolsinterface.model.TemporaryAccessData;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,17 +12,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@EnableScheduling
 public class TemporaryAccessController {
 
     private List<TemporaryAccessData> temporaryAccessDataList = new ArrayList<>();
 
-    @Scheduled(cron = "0 0 0 * * *")
-    public void clearDataFromListAtMidnight() {
-        LocalDateTime now = LocalDateTime.now();
-        temporaryAccessDataList.removeIf(data ->
-                data.getLocalDateTime().toLocalDate().isBefore(now.toLocalDate()));
-    }
 
+    @Scheduled(cron = "0 1 0 * * *", zone = "Europe/Paris")
+    public void clearDataFromListAtMidnight() {
+        try {
+            LocalDateTime now = LocalDateTime.now();
+            if (now.isAfter(temporaryAccessDataList.get(0).getLocalDateTime())){
+                temporaryAccessDataList.remove(0);
+            }
+        } catch (IndexOutOfBoundsException e){
+            System.out.println("Ingen data i listen.");
+        }
+
+    }
 
     @PostMapping("/getTemporaryAccess")
     public String submitTemporaryAccess(@RequestParam("hourAmount") int hourAmount,
@@ -40,3 +49,4 @@ public class TemporaryAccessController {
         return temporaryAccessDataList;
     }
 }
+
