@@ -1,4 +1,3 @@
 com\example\itoolsinterface\controller\HomeController.class
-com\example\itoolsinterface\configuration\AppConfig.class
 com\example\itoolsinterface\ItoolsInterfaceApplication.class
 com\example\itoolsinterface\interceptors\SessionInterceptor.class
