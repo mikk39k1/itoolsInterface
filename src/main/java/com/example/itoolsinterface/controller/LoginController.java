@@ -33,7 +33,7 @@ public class LoginController {
         if (loginRequest == Login.LoginResult.SUCCESS) {
             Login user = loginService.getLoginSession(login.getLoginUsername(), login.getLoginPassword());
             session.setAttribute("user", user);
-            return "home/index";
+            return "redirect:/";
 
         } else {
             if (loginRequest == Login.LoginResult.INCORRECT_USERNAME) {

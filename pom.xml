@@ -8,11 +8,11 @@
         <version>3.0.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.renehypno</groupId>
-    <artifactId>ReneHypnoProject</artifactId>
+    <groupId>com.itools</groupId>
+    <artifactId>iTools</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ReneHypnoProject</name>
-    <description>ReneHypnoProject</description>
+    <name>iTools</name>
+    <description>iTools</description>
     <properties>
         <java.version>20</java.version>
     </properties>
