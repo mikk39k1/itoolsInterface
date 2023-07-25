@@ -28,7 +28,7 @@ public class LoginRepo {
 
 
     public Login getLoginSession(String username, String password) {
-        String sql = "SELECT * FROM login_credentials " +
+        String sql = "SELECT * FROM login_credentials JOIN team_member USING (login_id)" +
                 " WHERE login_username = ? AND login_password = ?";
         return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Login.class), username, password);
     }

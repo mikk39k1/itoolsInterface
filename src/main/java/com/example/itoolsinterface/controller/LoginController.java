@@ -25,7 +25,6 @@ public class LoginController {
         return "authorization/login";
     }
 
-
     @PostMapping("/login")
     public String login(@ModelAttribute("loginRequest") @Valid Login login, BindingResult result, HttpSession session) {
         Login.LoginResult loginRequest = loginService.loginUser(login.getLoginUsername(), login.getLoginPassword());
@@ -33,7 +32,7 @@ public class LoginController {
         if (loginRequest == Login.LoginResult.SUCCESS) {
             Login user = loginService.getLoginSession(login.getLoginUsername(), login.getLoginPassword());
             session.setAttribute("user", user);
-            return "home/index";
+            return "redirect:/";
 
         } else {
             if (loginRequest == Login.LoginResult.INCORRECT_USERNAME) {
@@ -49,7 +48,7 @@ public class LoginController {
     @GetMapping("/logOut")
     public String logout(HttpSession httpSession) {
         httpSession.invalidate();
-        return "redirect:/";
+        return "redirect:/signin";
     }
 
     @GetMapping("/accessDenied")
