@@ -10,8 +10,8 @@ import lombok.Setter;
 public class Card {
 
     private int cardId;
-    private String cardImg;
-    private String cardHeader;
+    private String cardTitle;
     private String cardLink;
+    private Boolean cardLoginIsRequired;
 
 }

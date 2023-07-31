@@ -5,14 +5,19 @@
     <title>New Card</title>
 </head>
 <body>
-<form action="/createNewCard" method="post">
-  <label for="cardHeader">Titel:</label>
-  <input type="text" name="cardHeader" id="cardHeader">
-  <label for="cardLink">Link:</label>
-  <input type="text" name="cardLink" id="cardLink">
-  <label for="cardImage">Upload billede:</label>
-  <input type="file" name="cardImage" id="cardImage">
-  <button type="submit">Opret</button>
+<form action="/createNewCard" method="post" enctype="multipart/form-data">
+    <label for="cardTitle">Titel:</label>
+    <input type="text" name="cardTitle" id="cardTitle">
+    <label for="cardLink">Link:</label>
+    <input type="text" name="cardLink" id="cardLink">
+    <label for="cardLoginIsRequired">Skal man være logget ind for at kunne se denn tilføjelse?</label>
+    <input type="hidden" name="cardLoginIsRequiredHidden" value="0">
+    <input type="checkbox" name="cardLoginIsRequired" id="cardLoginIsRequired">
+    <label for="cardImage">Upload billede:</label>
+    <input type="file" name="cardImage" id="cardImage">
+    <button type="submit">Opret</button>
 </form>
+
 </body>
+
 </html>
