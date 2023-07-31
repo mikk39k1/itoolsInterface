@@ -59,7 +59,7 @@ public class HomeController {
         cardService.createNewCard(cardTitle, cardLink, loginIsRequired);
         int cardId = cardService.getCardIdFromTitle(cardTitle);
 
-        String imagePath = "/images/" + fileName;
+        String imagePath = "/home/fomadmin/itoolsInterface/src/main/resources/static/images/" + fileName;
 
         cardService.saveImage(cardId, imagePath);
 
