@@ -47,7 +47,7 @@ public class HomeController {
 
         String fileName = UUID.randomUUID().toString() + '_' + cardImage.getOriginalFilename();
         try {
-            Path filePath = Paths.get("/home/fomadmin/itoolsInterface/src/main/resources/static/images/" + fileName);
+            Path filePath = Paths.get("images/" + fileName);
             Files.copy(cardImage.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException e){
             e.printStackTrace();
@@ -59,7 +59,7 @@ public class HomeController {
         cardService.createNewCard(cardTitle, cardLink, loginIsRequired);
         int cardId = cardService.getCardIdFromTitle(cardTitle);
 
-        String imagePath = "/home/fomadmin/itoolsInterface/src/main/resources/static/images/" + fileName;
+        String imagePath = "images/" + fileName;
 
         cardService.saveImage(cardId, imagePath);
 
