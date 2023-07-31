@@ -47,7 +47,7 @@ public class HomeController {
 
         String fileName = UUID.randomUUID().toString() + '_' + cardImage.getOriginalFilename();
         try {
-            Path filePath = Paths.get("home/fomadmin/itoolsInterface/src/main/resources/static/images/" + fileName);
+            Path filePath = Paths.get('/' + "home/fomadmin/itoolsInterface/src/main/resources/static/images/" + fileName);
             Files.copy(cardImage.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException e){
             e.printStackTrace();
