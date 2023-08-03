@@ -19,50 +19,27 @@
 </header>
 
 <div class="page-wrapper">
-    <div class="itools-interface" th:each="card: ${cardsVisibleToAll}">
-
-        <div class="card-wrapper">
-            <h2 class="card-title" th:text="${card.cardTitle}"></h2>
-            <div class="card-container">
-                <a class="link-container" th:href="${card.cardLink}" target="_blank">
-                    <img class="card-image" th:src="${card.imagePath}" alt="card-image">
-                </a>
-            </div>
-        </div>
-
-
-        <div th:if="${session.user != null}" th:each="cardLoggedIn: ${cardVisibleWhenLoggedIn}">
-            <div class="card-wrapper">
-                <h2 class="card-title" th:text="${cardLoggedIn.cardTitle}"></h2>
-                <div class="card-container">
-                    <a class="link-container" th:href="${cardLoggedIn.cardLink}" target="_blank">
-                        <img class="card-image" th:src="${cardLoggedIn.imagePath}" alt="card-image">
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Insert new interface windows here
+    <div class="itools-interface">
         <a href="http://itools:9090/" target="_blank">
             PDF Checker
             <div class="pdf-checker">
             </div>
         </a>
 
-        Insert new interface windows here
+
         <a href="http://192.168.40.29/zabbix/tunnellist.html" target="_blank">
             Tunnelmail
             <div class="tunnelmail">
             </div>
         </a>
 
-         Insert new interface windows here
+
         <a href="http://192.168.40.29/zabbix/zabbix.php?action=dashboard.view&dashboardid=21" target="_blank">
             Printer Tonere
             <div class="printer-toner">
             </div>
         </a>
-        -->
+
     </div>
     <div class="temporary-access-wrapper">
         <h2>Midlertidig tilmelding af mailgruppe.</h2>
