@@ -28,7 +28,6 @@ public class TemporaryAccessController {
         } catch (IndexOutOfBoundsException e){
             System.out.println("Ingen data i listen.");
         }
-
     }
 
     @PostMapping("/getTemporaryAccess")
