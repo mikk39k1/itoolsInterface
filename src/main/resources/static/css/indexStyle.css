@@ -117,7 +117,7 @@ nav img {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../../../../../../../../IdeaProjects/itools-rest-api/src/main/resources/static/images/tunnelmail.png");
+    background-image: url("../images/tunnelmail.png");
     height: 150px;
     width: 300px;
     background-position: center;
@@ -131,7 +131,7 @@ nav img {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../../../../../../../../IdeaProjects/itools_react_interface_local/public/printertoner.png");
+    background-image: url("../images/printertoner.png");
     height: 150px;
     width: 300px;
     background-position: center;
